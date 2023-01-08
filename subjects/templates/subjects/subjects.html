@@ -1,0 +1,13 @@
+{% extends 'subjects/base.html' %}
+
+{% block content %}
+	<p><a href="{% url 'subjects:new_subject' %}">Add a new subject</a></p>
+	<p><a href="{% url 'subjects:new_task' %}">Add a new task</a></p>
+	<ul>
+		{% for subj in subjects %}
+			<li>
+				{{subj}} 
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

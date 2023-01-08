@@ -1,0 +1,9 @@
+{% extends 'subjects/base.html' %}
+
+{% block content %}
+    <form action="{% url 'subjects:new_task' %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button name='submit'>Add a new task</button>
+    </form>
+{% endblock content %}

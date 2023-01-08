@@ -1,0 +1,23 @@
+{% extends 'subjects/base.html' %}
+
+{% block content %}
+	<ul>
+		{% for task in tasks %}
+			<li>
+				<span>
+					{{task}} 
+				</span>
+				<span>
+					<form method='post' action=''>
+						{% csrf_token %}
+						<span>
+							<button name='submit' value="{{ task.id }}" >Done</button>
+						</span>
+					</form>
+				</span>
+			</li>
+		{% empty %}
+			<h1>U have no tasks for now</h1>
+		{% endfor %}
+	</ul>
+{% endblock %}

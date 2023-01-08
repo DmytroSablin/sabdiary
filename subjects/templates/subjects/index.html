@@ -1,0 +1,17 @@
+{% extends 'subjects/base.html' %}
+
+{% block content %}
+	{% if user.is_authenticated%}
+		<p><a href="{% url 'subjects:new_subject' %}">Add a new subject</a></p>
+		<p><a href="{% url 'subjects:new_task' %}">Add a new task</a></p>
+		<ul>
+			{% for task in tasks %}
+				<li>
+					{{task}} 
+				</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<h1>SABDIARY</h1>
+	{% endif %}
+{% endblock content %}
